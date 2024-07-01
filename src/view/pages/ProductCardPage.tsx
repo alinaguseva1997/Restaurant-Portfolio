@@ -1,7 +1,7 @@
 import React from 'react';
 import {CardProduct} from "../../features/CardProduct/CardProduct";
-import {Header} from "../../features/Header/Header";
-import {Footer} from "../../features/Footer/Footer";
+import {Header} from "../../components/Header/Header";
+import {Footer} from "../../components/Footer/Footer";
 
 export const ProductCardPage = () => {
     return (

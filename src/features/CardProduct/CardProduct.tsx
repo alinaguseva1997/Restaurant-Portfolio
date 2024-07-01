@@ -1,9 +1,6 @@
 import React from 'react';
 
 import dich1 from './images/dich1.jpg'
-import dich2 from './images/dich2.jpg'
-import dich3 from './images/dich3.jpg'
-import dich4 from './images/dich4.jpg'
 import dich from './images/card-dich.jpg'
 import line from './images/Line.svg'
 import buy from './images/Buy.svg'
@@ -14,7 +11,7 @@ import arrowBackGreen from './images/Arrow-green-mobile.svg'
 export const CardProduct = () => {
     return (
         <div className='relative pb-[1%] tablet-md:pb-[15%]'>
-        <section className="mx-0 tablet-lg:mx-[15px] desktop-1xl:mx-auto relative flex flex-col pt-0 pt-[30px] tablet-mg:pt-[40px] pb-[40px] border-b-[1px] border-b-white border-opacity-[0.1]">
+        <section className="mx-0 tablet-lg:mx-[15px] desktop-1xl:mx-auto relative flex flex-col pt-[30px] tablet-mg:pt-[40px] pb-[40px] border-b-[1px] border-b-white border-opacity-[0.1]">
             <div className="max-w-[1210px] mx-auto">
                 <div className="hidden mx-[15px] tablet-lg:mx-0 tablet:block cursor-pointer">
                     <a className="inline-block relative top-[7px] mr-[10px] w-[26px] h-[26px] rounded-full bg-custom-gradient hover:bg-light-green" href="#">
@@ -73,7 +70,7 @@ export const CardProduct = () => {
                 <div className='flex flex-wrap gap-[20px] justify-center tablet-md:justify-stretch px-[15px] desktop-2xl:px-0'>
                     <div className="w-full tablet-md:w-[350px] relative flex flex-col hover:shadow-cardItem h-max tablet-md:h-[406px]">
                         <a href="#" target="_blank">
-                            <img src={dich3} alt="dich" className="rounded-t-[10px] cursor-pointer w-full"/>
+                            <img src={dich1} alt="dich" className="rounded-t-[10px] cursor-pointer w-full"/>
                         </a>
                         <div
                             className="flex flex-wrap flex-1 bg-itemCard rounded-b-[10px] pt-[15px] pr-[15px] pb-[18px] pl-[20px]">
@@ -101,7 +98,7 @@ export const CardProduct = () => {
 
                     <div className="w-full tablet-md:w-[350px] relative flex flex-col hover:shadow-cardItem h-max tablet-md:h-[406px]">
                         <a href="#" target="_blank">
-                            <img src={dich4} alt="dich" className="rounded-t-[10px] cursor-pointer w-full"/>
+                            <img src={dich1} alt="dich" className="rounded-t-[10px] cursor-pointer w-full"/>
                         </a>
                         <div
                             className="flex flex-wrap flex-1 bg-itemCard rounded-b-[10px] pt-[15px] pr-[15px] pb-[18px] pl-[20px]">
@@ -155,7 +152,7 @@ export const CardProduct = () => {
 
                     <div className="w-full tablet-md:w-[350px] relative flex flex-col hover:shadow-cardItem h-max tablet-md:h-[406px]">
                         <a href="#" target="_blank">
-                            <img src={dich2} alt="dich" className="rounded-t-[10px] cursor-pointer w-full"/>
+                            <img src={dich1} alt="dich" className="rounded-t-[10px] cursor-pointer w-full"/>
                         </a>
                         <div
                             className="flex flex-wrap flex-1 bg-itemCard rounded-b-[10px] pt-[15px] pr-[15px] pb-[18px] pl-[20px]">

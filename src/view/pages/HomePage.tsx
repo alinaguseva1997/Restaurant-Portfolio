@@ -1,20 +1,24 @@
-import React from 'react';
-import {Header} from "../../features/Header/Header";
+import React, {useState} from 'react';
 import {Banner} from "../../features/Banner/Banner";
 import {ColdSnacksContentList} from "../../features/MenuContentList/ColdSnacksContentList";
 import {Portfolio} from "../../features/Portfolio/Portfolio";
-import {Footer} from "../../features/Footer/Footer";
 import {NavBar} from "../../features/NavBar/NavBar";
+import {ProductArrayType} from "../../App/App";
 
-export const HomePage = () => {
+export type HomePagePropsType = {
+    products: ProductArrayType
+}
+export const HomePage = (props: HomePagePropsType) => {
+
+    const [tabNumber,setTabNumber] = useState(1)
+
+    const products = tabNumber === 1 ? props.products['coldSnacks'] : tabNumber === 2 ? props.products['hotSnacks'] : tabNumber === 3 ? props.products['meatSnacks']: tabNumber === 4 ? props.products['soaps']: tabNumber === 5 ? props.products['fishSnacks']: tabNumber === 6 ? props.products['grillMenu']: tabNumber === 7 ? props.products['brandedMenu']: tabNumber === 8 ? props.products['drinks']: []
     return (
         <>
-            <Header/>
             <Banner/>
-            <NavBar />
-            <ColdSnacksContentList/>
+            <NavBar setTabNumber={setTabNumber}/>
+            <ColdSnacksContentList tabNumber={tabNumber} products={products}/>
             <Portfolio/>
-            <Footer/>
         </>
     );
 };
