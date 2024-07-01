@@ -1,13 +1,66 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.baseTextStyle {
+    @apply font-mulish font-normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.bannerTextGreen {
+    @layer absolute top-[316px] left-[450px] baseTextStyle italic text-[25px] text-center text-white transform rotate-[-8.37deg]
+}
+
+.bannerText {
+    position: absolute;
+    top: 24.4%;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 73px;
+    text-align: center;
+    color: #FFFFFF;
+    transform: rotate(-8.37deg);
+}
+
+.bannetText3d {
+    top: 25%;
+    left: 10%;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #FFFFFF;
+}
+
+.bannerImg {
+    background-image: url("./features/Banner/images/banner.jpg");
+}
+.portfolioBg {
+    background: linear-gradient(90deg, rgba(33,31,32,1) 30%, rgba(68,64,63,0) 100%), url('./features/Portfolio/images/portfolio-bg.png')
+}
+
+.navigation {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0px 110px 2px 95px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navigation::-webkit-scrollbar {
+    background-color: #403C3B;
+    height: 3px;
+}
+
+.navigation::-webkit-scrollbar-thumb {
+    background-color: #504B4A;
+    border-radius: 10px;
+    cursor: grab;
+}
+
+.map {
+    filter: grayscale(1) invert(80%)
+}
+
+
+.aboutUs:hover>.benefitsBlock,
+.aboutUs:hover>.benefitsBlock,
+.aboutUs:hover>.benefitsBlock {
+    color: #618967;
 }
