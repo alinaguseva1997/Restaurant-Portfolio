@@ -16,7 +16,7 @@ export const HomePage = (props: HomePagePropsType) => {
     return (
         <>
             <Banner/>
-            <NavBar setTabNumber={setTabNumber}/>
+            <NavBar setTabNumber={setTabNumber} activeTab={tabNumber}/>
             <ColdSnacksContentList tabNumber={tabNumber} products={products}/>
             <Portfolio/>
         </>

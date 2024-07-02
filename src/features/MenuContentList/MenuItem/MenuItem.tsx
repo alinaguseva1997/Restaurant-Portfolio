@@ -12,6 +12,7 @@ export type MenuItemPropsType ={
 export const MenuItem = (props:MenuItemPropsType) => {
 
     const [productActive, setProductActive] = useState('')
+    const [quantity, setQuantity] = useState(1)
 
     return (
         <>
@@ -41,13 +42,13 @@ export const MenuItem = (props:MenuItemPropsType) => {
                         </form>
 
                     </div>
-                    {productActive && <ProductItemForm price={props.product.price}/>}
+                    {productActive && <ProductItemForm setQuantity={setQuantity} quantity={quantity} price={props.product.price}/>}
                 </div>
 
                 {productActive === props.product.id ?
                 <div className="absolute z-[1] right-[-15px] top-[-15px] w-[50px] h-[50px] rounded-full bg-white-green">
                     <span
-                        className="absolute top-[13px] left-[19px] font-mulish font-bold text-[20px] text-white">3</span>
+                        className="absolute top-[13px] left-[19px] font-mulish font-bold text-[20px] text-white">{quantity}</span>
                 </div>
                 : <></>}
             </div>
