@@ -9,6 +9,8 @@ import {ProductCardItemInfo} from "./ProductCardItemInfo/ProductCardItemInfo";
 export type CardProductPropsType = {
     dopProductData: ProductsType[]
     productList: ProductArrayType
+    quantityBuyProduct: number
+    setQuantityBuyProduct: (newValue: number)=>void
 }
 export const CardProduct = (props:CardProductPropsType) => {
 
@@ -45,7 +47,7 @@ export const CardProduct = (props:CardProductPropsType) => {
             <section className="pl-0 tablet-lg:pl-[15px] desktop-1xl:pl-[40px] mb-[71px]">
                 <h2 className="font-mulish font-bold text-[20px] tablet-md:text-[32px] text-white mt-[35px] tablet-md:mt-[50px] mb-[40px] tablet-md:mb-[50px] mr-0 tablet-md:mr-[46px] pl-[10px] tablet-md:pl-[19px] border-l-[4px] border-l-green ml-[15px] tablet-md:ml-[60px]">С ЭТИМ ТОВАРОМ ПОКУПАЮТ</h2>
                 <div className='flex flex-wrap gap-[20px] justify-center tablet-md:justify-stretch px-[15px] desktop-2xl:px-0'>
-                    {props.dopProductData.map(card => <div key={card.id}><MenuItem product={card} /></div>)}
+                    {props.dopProductData.map(card => <div key={card.id}><MenuItem quantityBuyProduct={props.quantityBuyProduct} setQuantityBuyProduct={props.setQuantityBuyProduct} product={card} /></div>)}
                 </div>
             </section>
         </div>

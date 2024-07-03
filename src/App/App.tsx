@@ -74,13 +74,15 @@ function App() {
         {id: v1(), title: 'Утка', description: 'Фаршированная апельсином и зеленым яблоком', weight: '269гр', price: '3340 ₽'},
     ])
 
+    const [quantity, setQuantity] = useState(1)
+
   return (
           <main className='w-full h-wull bg-base overflow-y-hidden'>
-              <Header />
+              <Header basketValue={quantity}/>
               <Routes>
-                  <Route path='/home' element={<HomePage products={products}/>}/>
+                  <Route path='/home' element={<HomePage quantityBuyProduct={quantity} setQuantityBuyProduct={setQuantity} products={products}/>}/>
                   <Route path='/' element={<Navigate to='/home'/>}/>
-                  <Route path='/product-card/:productId' element={<CardProduct productList={products} dopProductData={dopProduct}/>}/>
+                  <Route path='/product-card/:productId' element={<CardProduct quantityBuyProduct={quantity} setQuantityBuyProduct={setQuantity} productList={products} dopProductData={dopProduct}/>}/>
                   <Route path='/error404' element={<Error404Page />}/>
                   <Route path='/*' element={<Navigate to='/error404'/>}/>
               </Routes>

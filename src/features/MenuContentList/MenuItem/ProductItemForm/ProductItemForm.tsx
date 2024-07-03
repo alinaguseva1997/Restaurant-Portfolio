@@ -9,7 +9,7 @@ export type ProductItemFormPropsType = {
     setIsActive: (newValue:boolean)=>void
     quantity: number
 }
-export const ProductItemForm = (props: ProductItemFormPropsType) => {
+export const ProductItemForm =(props: ProductItemFormPropsType) => {
     const sumPrice = useRef<HTMLSpanElement>(null);
 
     const onClickIncHandler = () => {

@@ -8,11 +8,12 @@ import { Link } from 'react-router-dom';
 
 export type MenuItemPropsType ={
     product: ProductsType
+    quantityBuyProduct: number
+    setQuantityBuyProduct: (newValue: number)=>void
 }
 
 export const MenuItem = (props:MenuItemPropsType) => {
 
-    const [quantity, setQuantity] = useState(1)
     const [isActive, setIsActive] = useState(false)
 
     const onClickHandler = () => {
@@ -21,9 +22,11 @@ export const MenuItem = (props:MenuItemPropsType) => {
 
     return (
         <>
-            <Link to={`/product-card/${props.product.id}`}
+            <div
                 className="pr-[20px] tablet-lg:pr-0 w-full h-auto tablet-md:h-[459px] tablet-md:w-[350px] tablet-lg:w-[400px] relative flex flex-col hover:shadow-cardItem">
-                <img src={dich1} alt="dich" className="rounded-t-[10px]"/>
+                <Link to={`/product-card/${props.product.id}`}>
+                    <img src={dich1} alt="dich" className="w-full rounded-t-[10px]"/>
+                </Link>
                 <div
                     className="flex flex-wrap flex-1 rounded-b-[10px] pt-[15px] pr-[15px] pb-[18px] pl-[20px] bg-itemCard">
                     <div className="flex w-full items-center justify-between">
@@ -47,15 +50,15 @@ export const MenuItem = (props:MenuItemPropsType) => {
                         </form>
 
                     </div>
-                        {isActive && <ProductItemForm setIsActive={setIsActive} setQuantity={setQuantity} quantity={quantity} price={props.product.price}/>}
+                        {isActive && <ProductItemForm setIsActive={setIsActive} setQuantity={props.setQuantityBuyProduct} quantity={props.quantityBuyProduct} price={props.product.price}/>}
                 </div>
 
-                {isActive && quantity !==0 ?
+                {isActive && props.quantityBuyProduct !==0 ?
                 <div className="absolute z-[1] right-[-15px] top-[-15px] w-[50px] h-[50px] rounded-full bg-white-green">
-                    <span className="absolute top-[13px] left-[19px] font-mulish font-bold text-[20px] text-white">{quantity}</span>
+                    <span className="absolute top-[13px] left-[19px] font-mulish font-bold text-[20px] text-white">{props.quantityBuyProduct}</span>
                 </div>
                 : <></>}
-            </Link>
+            </div>
         </>
 
     );

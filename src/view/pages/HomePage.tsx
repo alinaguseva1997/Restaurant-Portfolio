@@ -7,6 +7,8 @@ import {ProductArrayType} from "../../App/App";
 
 export type HomePagePropsType = {
     products: ProductArrayType
+    quantityBuyProduct: number
+    setQuantityBuyProduct: (newValue: number)=>void
 }
 export const HomePage = (props: HomePagePropsType) => {
 
@@ -17,7 +19,7 @@ export const HomePage = (props: HomePagePropsType) => {
         <>
             <Banner/>
             <NavBar setTabNumber={setTabNumber} activeTab={tabNumber}/>
-            <ColdSnacksContentList tabNumber={tabNumber} products={products}/>
+            <ColdSnacksContentList setQuantityBuyProduct={props.setQuantityBuyProduct} quantityBuyProduct={props.quantityBuyProduct} tabNumber={tabNumber} products={products}/>
             <Portfolio/>
         </>
     );
