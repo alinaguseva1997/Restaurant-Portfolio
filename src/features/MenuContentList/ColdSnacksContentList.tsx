@@ -18,13 +18,9 @@ export const ColdSnacksContentList = (props:ColdSnacksContentListPropsType) => {
             <section className='mx-auto ml-[20px] tablet-lg:ml-[114px] pb-[50px] border-b-[1px] last:border-b-0 border-b-white border-opacity-[0.1]'>
             <p className='mt-[50px] mb-[35px] pl-[20px] border-l-[4px] border-l-green font-mulish font-bold text-[20px] mobile:text-[28px] tablet-lg:text-[32px] text-white'>{nameSection}</p>
                 <div className='flex gap-[20px] cursor-pointer flex-wrap mx-auto'>
-                    {props.products.map(el =>
-                        <MenuItem product={el}/>
-                    )}
-
+                    {props.products.map(el => (<MenuItem key={el.id} product={el}/>))}
                 </div>
             </section>
         </section>
     );
 };
-

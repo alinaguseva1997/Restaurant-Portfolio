@@ -4,6 +4,7 @@ import dich1 from './images/dich1.jpg'
 import BuyIcon from './images/Buy.svg'
 import {ProductsType} from "../../../App/App";
 import {ProductItemForm} from "./ProductItemForm/ProductItemForm";
+import { Link } from 'react-router-dom';
 
 export type MenuItemPropsType ={
     product: ProductsType
@@ -20,8 +21,8 @@ export const MenuItem = (props:MenuItemPropsType) => {
 
     return (
         <>
-            <div
-                className="pr-[20px] tablet-lg:pr-0 w-full h-[459px] tablet-md:w-[350px] tablet-lg:w-[400px] relative flex flex-col hover:shadow-cardItem">
+            <Link to={`/product-card/${props.product.id}`}
+                className="pr-[20px] tablet-lg:pr-0 w-full h-auto tablet-md:h-[459px] tablet-md:w-[350px] tablet-lg:w-[400px] relative flex flex-col hover:shadow-cardItem">
                 <img src={dich1} alt="dich" className="rounded-t-[10px]"/>
                 <div
                     className="flex flex-wrap flex-1 rounded-b-[10px] pt-[15px] pr-[15px] pb-[18px] pl-[20px] bg-itemCard">
@@ -54,7 +55,7 @@ export const MenuItem = (props:MenuItemPropsType) => {
                     <span className="absolute top-[13px] left-[19px] font-mulish font-bold text-[20px] text-white">{quantity}</span>
                 </div>
                 : <></>}
-            </div>
+            </Link>
         </>
 
     );

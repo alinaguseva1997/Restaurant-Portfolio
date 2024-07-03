@@ -6,23 +6,20 @@ import search from './images/Search.svg'
 import calling from './images/Calling.svg'
 import buy from './images/Buy.svg'
 import line from './images/Line.svg'
+import {AddressInput} from "./AddressInput/AddressInput";
+import {Link} from "react-router-dom";
 
 
 export const Header = () => {
     return (
         <header className='max-w-[1272px] h-[155px] tablet-md:h-[99px] pt-[23px] mx-0 tablet-md:mx-[15px] desktop-1xl:mx-auto '>
             <div className='hidden tablet-md:flex tablet-md:flex-nowrap tablet-lg:flex-wrap justify-between items-center'>
-                <img className='w-[100px] h-[25px] cursor-pointer' src={logo} alt="logo"/>
+                <Link to='/home'>
+                    <img className='w-[100px] h-[25px] cursor-pointer' src={logo} alt="logo"/>
+                </Link>
 
                 <div className='flex w-max desktop:w-[763px] gap-[30px]'>
-                    <div className='flex-none tablet-lg:flex-1'>
-                    <form className='relative'>
-                        <input className='w-full h-[52px] px-[48px] bg-[#504B4A] rounded-[10px] border-none text-base-white baseTextStyle text-md placeholder:text-[#CFCFCF]' type="text" placeholder="Введите адрес доставки"/>
-                            <img className='absolute left-[14px] top-[14px]' src={locationSearch} alt="search-location"/>
-                                <img className='absolute right-[17px] top-[14px] cursor-pointer' src={search} alt="search"/>
-                    </form>
-                    </div>
-
+                    <AddressInput />
                     <div className='min-w-[178px] flex items-center'>
                         <div className='relative min-w-[32px] h-[32px] mr-[10px] bg-custom-gradient rounded-full'>
                             <img className='absolute top-1/2 left-1/2 transform translate-x-[-50%] translate-y-[-50%] w-[12px] h-[12px]' src={calling} alt="tel"/>
