@@ -4,9 +4,10 @@ import {Route, Routes, Navigate} from "react-router-dom";
 import {Error404Page} from "../view/pages/Error404Page";
 import {HomePage} from "../view/pages/HomePage";
 import {Header} from "../features/Header/Header";
-import {Footer} from "../components/Footer/Footer";
+import {Footer} from "../features/Footer/Footer";
 import {v1} from "uuid";
 import {CardProduct} from "../features/CardProduct/CardProduct";
+import {BasketPage} from "../view/pages/BasketPage";
 
 export type ProductsType = {
     id: string,
@@ -78,11 +79,12 @@ function App() {
 
   return (
           <main className='w-full h-wull bg-base overflow-y-hidden'>
-              <Header basketValue={quantity}/>
+              <Header />
               <Routes>
                   <Route path='/home' element={<HomePage quantityBuyProduct={quantity} setQuantityBuyProduct={setQuantity} products={products}/>}/>
                   <Route path='/' element={<Navigate to='/home'/>}/>
                   <Route path='/product-card/:productId' element={<CardProduct quantityBuyProduct={quantity} setQuantityBuyProduct={setQuantity} productList={products} dopProductData={dopProduct}/>}/>
+                  <Route path='/basket' element={<BasketPage />}/>
                   <Route path='/error404' element={<Error404Page />}/>
                   <Route path='/*' element={<Navigate to='/error404'/>}/>
               </Routes>

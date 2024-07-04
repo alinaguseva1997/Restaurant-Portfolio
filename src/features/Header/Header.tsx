@@ -7,11 +7,7 @@ import {AddressInput} from "../../components/AddressInput/AddressInput";
 import {Link} from "react-router-dom";
 import {Basket} from "../../components/Basket/Basket";
 
-export type HeaderPropsType = {
-    basketValue: number
-}
-
-export const Header = (props: HeaderPropsType) => {
+export const Header = () => {
     return (
         <header className='max-w-[1272px] h-[155px] tablet-md:h-[99px] pt-[23px] mx-0 tablet-md:mx-[15px] desktop-1xl:mx-auto '>
             <div className='hidden tablet-md:flex tablet-md:flex-nowrap tablet-lg:flex-wrap justify-between items-center'>
@@ -33,7 +29,7 @@ export const Header = (props: HeaderPropsType) => {
                         </div>
                     </div>
                 </div>
-                <Basket value={props.basketValue}/>
+                <Basket/>
             </div>
 
             <div className='mx-[15px] block tablet-md:hidden'>
